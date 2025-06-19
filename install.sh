@@ -3,8 +3,7 @@
 unset check
 for i in `echo $PATH | sed 's/:/\n/g'`
 do
-        if [[ ${i} == "/usr/local/bin" ]];
-	then
+        if [[ ${i} == "/usr/local/bin" ]];then
  		check="yes"
         fi
 done
