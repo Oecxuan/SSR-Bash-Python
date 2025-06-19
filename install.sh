@@ -3,13 +3,13 @@
 #unset check
 #for i in `echo $PATH | sed 's/:/\n/g'`
 #do
-	#if [[ ${i} == "/usr/local/bin" ]];then
-		#check="yes"
-	#fi
+#if [[ ${i} == "/usr/local/bin" ]];then
+#check="yes"
+#fi
 #done
 #if [[ -z ${check} ]];then
-        #echo "export PATH=${PATH}:/usr/local/bin" >> ~/.bashrc
-        #. ~/.bashrc
+#echo "export PATH=${PATH}:/usr/local/bin" >> ~/.bashrc
+#. ~/.bashrc
 #fi
 
 #Check Root
