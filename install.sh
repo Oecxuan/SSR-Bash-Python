@@ -1,4 +1,5 @@
 #!/bin/bash
+#!/bin/csh
 #Set PATH
 unset check
 for i in `echo $PATH | sed 's/:/\n/g'`
