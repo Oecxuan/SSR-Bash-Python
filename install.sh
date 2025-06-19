@@ -1,15 +1,15 @@
 #!/bin/bash
 #Set PATH
-
-# 检查/usr/local/bin是否已在PATH中（支持尾部斜杠）
-if [[ ":$PATH:" != *":/usr/local/bin:"* && ":$PATH:" != *":/usr/local/bin/:"* ]]; then
-    # 避免重复添加：检查.bashrc是否已包含该路径
-    if ! grep -q "PATH=.*:/usr/local/bin" ~/.bashrc; then
-        echo "export PATH=\"\$PATH:/usr/local/bin\"" >> ~/.bashrc
-    fi
-    echo "Added /usr/local/bin to PATH. Run 'source ~/.bashrc' or restart your shell."
-else
-    echo "/usr/local/bin is already in PATH."
+unset check
+for i in `echo $PATH | sed 's/:/\n/g'`
+do
+if [[ ${i} == "/usr/local/bin" ]];then
+check="yes"
+fi
+done
+if [[ -z ${check} ]];then
+echo "export PATH=${PATH}:/usr/local/bin" >> ~/.bashrc
+. ~/.bashrc
 fi
 
 #Check Root
